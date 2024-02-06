@@ -1,0 +1,14 @@
+.input{
+    display: flex;
+    justify-content:space-around;
+    justify-content: center;
+    .spacer{
+        padding: 4px;
+    }
+}
+
+.inputform{
+    margin-left: 8px;
+    margin-top: 4px;
+    padding: 4px;
+}

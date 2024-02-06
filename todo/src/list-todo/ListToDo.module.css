@@ -1,0 +1,11 @@
+
+.maincontainer{
+    background-color: rgb(223, 232, 232);
+    width: 72%;
+    display: flex;
+    direction:rtl;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+}

@@ -1,0 +1,10 @@
+.labelgeneral{
+    padding: 2px 4px;
+    border-radius: 4px;
+    background-color: rgb(231, 225, 231);
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+        background-color: rgb(193, 183, 193);
+      }
+}
