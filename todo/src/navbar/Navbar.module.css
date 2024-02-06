@@ -1,0 +1,8 @@
+.maincontainer{
+    background-color: rgb(194, 233, 233);
+    width:32%;
+    max-height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
