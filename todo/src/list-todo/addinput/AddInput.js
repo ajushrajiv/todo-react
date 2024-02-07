@@ -1,11 +1,11 @@
-import StandardForm from "../../components/forms/StandardForm";
+import StandardForm from "../../components/forms/standardform/StandardForm";
 
-function AddInput(){
-    return(
-        <div>
-            <StandardForm />
-        </div>
-    );
+function AddInput() {
+  return (
+    <div>
+      <StandardForm />
+    </div>
+  );
 }
 
 export default AddInput;
