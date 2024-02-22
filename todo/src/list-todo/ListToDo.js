@@ -7,7 +7,7 @@ function ListToDo(){
     return(
         <div>
             <div className={styles.maincontainer}>
-                <StandardLabel text={`${ListTitle.title}`} />
+                <h4>Todo list</h4>
             </div>
                 <AddInput />
         </div>
