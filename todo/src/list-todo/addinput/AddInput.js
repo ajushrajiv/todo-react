@@ -11,8 +11,8 @@ function AddInput() {
   async function fetchToDos(){
     try{
       const jsonRes = await ToDosQueries.fetchAllToDos();
-      console.log(jsonRes);
-      setTodos(jsonRes);
+      console.log("The json response from Addinput", jsonRes.todos);
+      setTodos(jsonRes.todos);
     }catch(e){
       console.log(e);
     }
@@ -60,6 +60,17 @@ function AddInput() {
     }
   }
 
+  async function fetchMarkedTodos(markedTodoId){
+    try{
+      let jsonRes = await ToDosMutation.markTodos(markedTodoId);
+      console.log("marked Todo from React App")
+      console.log(jsonRes);
+      setTodos(jsonRes)
+    }catch(e){
+      console.log(e);
+    }
+  }
+
   async function fetchDeleteTodos(todoId){
     try{
      let jsonRes = await ToDosMutation.deleteTodos(todoId);
@@ -75,27 +86,30 @@ function AddInput() {
   useEffect(()=>{
     fetchToDos();
 
-    fetchTodoById(1);
+   // fetchTodoById(1);
 
-   let newTodo = {
-      id: 4,
-      task:"book an appointment"
-    }
-    fetchCreateTodos(newTodo);
+  //  let newTodo = {
+  //     id: 5,
+  //     task:"complete the pending app"
+  //   }
+  //   fetchCreateTodos(newTodo);
 
-    let updatedTodo = {
-      id:1,
-      newTask:"PSM"
-    }
-    fetchUpdatedTodos(updatedTodo);
-
-    fetchDeleteTodos(1);
+    // let updatedTodo = {
+    //   id:2,
+    //   newTask:"PSM"
+    // }
+    // fetchUpdatedTodos(updatedTodo);
+    //fetchMarkedTodos(4)
   },[])
   
 
   return (
     <div className = {styles.main}>
-      <TodoContainer todo={todos}></TodoContainer> 
+      
+      {todos && todos.map((item) => (
+          <TodoContainer key={item.id} todo={item}></TodoContainer>
+      ))} 
+      
     </div>
   );
 }
